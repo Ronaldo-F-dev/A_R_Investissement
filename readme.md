@@ -56,3 +56,5 @@ Les contributions sont les bienvenues ! Merci de créer une issue ou de soumettr
 
 Ce projet est libre et gratuit. Mais je ne serai en aucun cas responsable d'une mauvaise utilisation de ce projet. C'est juste un projet de test !
 Merci !
+
+Email : awademeronaldoo@gmail.com
