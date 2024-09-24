@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> {{NOM_SITE}}</title>
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
+  </head>
+  <body>
+    <div class="container-scroller">
+      {% include('partials/nav.html.twig') %}
+      <div class="container-fluid page-body-wrapper">
+          {% include('partials/navbar.html.twig') %}
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!--<div id="embed" style="width: 500px; height: 420px"></div>-->
+            <div class="row">
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card corona-gradient-card">
+                  <div class="card-body py-0 px-0 px-sm-3">
+                    <div class="row align-items-center">
+                      <div class="col-4 col-sm-3 col-xl-2">
+                        <img src="assets/images/dashboard/Group126@2x.png" class="gradient-corona-img img-fluid" alt="">
+                      </div>
+                      <div class="col-5 col-sm-7 col-xl-8 p-0">
+                        <h4 class="mb-1 mb-sm-0">Recevez des bonus</h4>
+                        <p class="mb-0 font-weight-normal d-none d-sm-block">
+                          Faîtes votre premier dépôt dès maintenant
+                        </p>
+                      </div>
+                      <div class="col-3 col-sm-2 col-xl-2 pl-0 text-center">
+                        <span>
+                          <a href="{{path('app_investissement')}}" class="btn btn-outline-light btn-rounded get-started-btn">J'investi maintenant</a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Vos plans d'investissements</h4>
+                    {% if app.user.investissements|length == 0 %}
+                    Pas de plan d'investissements
+                    {% else %}
+                     <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>
+                              <div class="form-check form-check-muted m-0">
+                                <label class="form-check-label">
+                                  <input type="checkbox" class="form-check-input">
+                                </label>
+                              </div>
+                            </th>
+                           
+                            <th>Plan</th>
+                            <th>Gain</th>
+                            <th>Durée</th>
+                            <th>Montant</th>
+                            <th>Statut</th>
+                          </tr>
+                        </thead>
+                        {% set i = 0 %}
+                        <tbody>
+                        {% for investissement in app.user.investissements %}
+                          
+                            <tr>
+                              <td>
+                                <div class="form-check form-check-muted m-0">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input">
+                                  </label>
+                                </div>
+                              </td>
+                            
+                              <td>{{investissement.plan.nom}}</td>
+                              <td>{{investissement.plan.gain}}%</td>
+                              
+                              <td>{{investissement.plan.duree}}mois</td>
+                              <td>{{investissement.montant}}</td>
+                              <td >
+                                {% if investissement.statut == 0 %}
+                                  <span class="badge badge-outline-danger verif">Non payer</span>
+                                  {% else %}
+                                  <span class="badge badge-outline-success verif">Payer</span>
+                                {% endif %}
+                              </td>
+                            </tr>
+                          
+                        {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © {{NOM_SITE}} 2016-{{'now'|date('Y')}}</span>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <script src="assets/js/settings.js"></script>
+    <script src="assets/js/todolist.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script>
+
+     
+
+    </script>
+  </body>
+</html>
+<style>
+  .verif{
+    cursor : pointer;
+  }
+  /* Boîte de dialogue centrée au milieu de l'écran */
+    .dialog {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #333; /* Couleur de fond sombre pour la boîte de dialogue */
+        color: white; /* Texte blanc pour le contenu */
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 1000;
+        width: 300px;
+        text-align: center;
+    }
+
+    .dialog-content h2, .dialog-content p {
+        color: white; /* Assurez-vous que tout le texte est en blanc */
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        cursor: pointer;
+        color: white; /* Assurez-vous que le bouton de fermeture est visible */
+        font-size: 20px;
+    }
+
+    /* Style pour griser le fond de l'écran lorsqu'on affiche la boîte de dialogue */
+    .dialog-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    /* Boutons de la boîte de dialogue */
+    #confirmBtn {
+        background-color: #28a745; /* Vert pour le bouton confirmer */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    #cancelBtn {
+        background-color: #dc3545; /* Rouge pour le bouton annuler */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    #confirmBtn:hover, #cancelBtn:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+    input[readonly] {
+    background-color: inherit !important; /* Conserve la couleur de fond d'origine */
+    color: inherit; /* Conserve la couleur de texte d'origine */
+    cursor: not-allowed; /* Change le curseur pour montrer que le champ est non modifiable */
+    
+  }
+  #closeDialog{
+    cursor : pointer; 
+  }
+</style>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> {{NOM_SITE}}</title>
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
+  </head>
+  <body>
+    <div class="container-scroller">
+      {% include('partials/nav.html.twig') %}
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_navbar.html -->
+
+          {% include('partials/navbar.html.twig') %}
+
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title text text-center">Informations de {{app.user }}</h4>
+                        {{form_start(form,{"attr":{"class" : "p-5"}})}}
+
+                            
+
+                            <div class="form-group">
+                                <label for="exampleInputName1">Nom</label>
+                                {{form_row(form.nom)}}
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Prénom</label>
+                                {{form_row(form.prenom)}}
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Email</label>
+                                {{form_row(form.email)}}
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Pays</label>
+                                {{form_row(form.pays)}}
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Numéro</label>
+                                {{form_row(form.numero)}}
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 p-3">Appliquer mes modifications</button>
+                        {{form_end(form)}}
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+            
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © {{NOM_SITE}} 2016-{{'now'|date('Y')}}</span>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <script src="assets/js/settings.js"></script>
+    <script src="assets/js/todolist.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>
+</html>

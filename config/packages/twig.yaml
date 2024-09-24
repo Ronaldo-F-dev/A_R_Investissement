@@ -1,5 +1,11 @@
 twig:
     file_name_pattern: '*.twig'
+    globals:
+        EMAIL: '%env(EMAIL)%'
+        NOM_SITE: '%env(NOM_SITE)%'
+        BTC: '%env(BTC)%'
+        MOMO: '%env(MOMO)%'
+        USDT: '%env(USDT)%'
 
 when@test:
     twig:

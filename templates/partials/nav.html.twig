@@ -1,0 +1,95 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+          <a class="sidebar-brand brand-logo" href="{{path('app_home')}}" style="color:white;">
+            {{NOM_SITE}}
+          </a>
+          <a class="sidebar-brand brand-logo-mini" href="{{path('app_home')}}" style="color:white;">
+            {{NOM_SITE}}</a>
+        </div>
+        <ul class="nav">
+          {% if app.user %}
+          <li class="nav-item profile">
+            <div class="profile-desc">
+              <div class="profile-pic">
+                <div class="count-indicator">
+                  <img class="img-xs rounded-circle" src="https://gravatar.com/avatar/27205e5c51cb03f862138b22bcb5dc20f94a342e74ff6df1b8dc8af3c865109.jpg">
+                  <span class="count bg-success"></span>
+                </div>
+                <div class="profile-name">
+                  <h5 class="mb-0 font-weight-normal">
+                    {{app.user}}
+                  </h5>
+                  <span>Gold Member</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item nav-category">
+            <span class="nav-link">Menu</span>
+          </li>
+          
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{path('app_dashbord')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Tableau de bord</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{path('app_profil')}}">
+                <span class="menu-icon">
+                  <i class="mdi mdi-playlist-play"></i>
+                </span>
+                <span class="menu-title">Profil</span>
+              </a>
+            </li>
+          
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{path('app_investissement')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-cash text-success"></i>
+              </span>
+              <span class="menu-title">Investir</span>
+            </a>
+          </li>
+
+                    <li class="nav-item menu-items">
+            <a class="nav-link" href="{{path('app_investi')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-login text-danger"></i>
+              </span>
+              <span class="menu-title">Mes investissements</span>
+            </a>
+          </li>
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{path('app_logout')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box text-danger"></i>
+              </span>
+              <span class="menu-title">Déconnexion</span>
+            </a>
+          </li>
+          {% else %}
+            <li class="nav-item menu-items">
+            <a class="nav-link" href="{{path('app_register')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-pencil text-success"></i>
+              </span>
+              <span class="menu-title">Inscription</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{path('app_login')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-login text-danger"></i>
+              </span>
+              <span class="menu-title">Connexion</span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+
+      

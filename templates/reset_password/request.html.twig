@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{{NOM_SITE}}</title>
+        <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/vendors/jvectormap/jquery-jvectormap.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/vendors/owl-carousel-2/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/vendors/owl-carousel-2/owl.theme.default.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+        <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
+        <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
+    </head>
+    <body>
+        <div class="container-scroller">
+            {% include('partials/nav.html.twig') %}
+            <div class="container-fluid page-body-wrapper">
+                {% include('partials/navbar.html.twig') %}
+                <div class="main-panel">
+                    <div class="content-wrapper">
+                        <div class="row">
+                            <div class="col-md-6 mx-auto mt-5">
+                                <div class="card mt-5">
+                                    <div class="card-body">
+                                        <h1 class="text text-center">Réinitialiser votre mot de passe</h1>
+
+                                        {{ form_start(requestForm) }}
+                                            {{ form_row(requestForm.email) }}
+                                            <div>
+                                                <small>
+                                                    Enter your email address, and we will send you a
+                                                    link to reset your password.
+                                                </small>
+                                            </div>
+
+                                            <button class="btn btn-primary w-100 mt-3 ">Recevoir le mail de réinitialisation</button>
+                                        {{ form_end(requestForm) }}
+                                        <p class="text text-center mt-3">
+                                          <br/>
+                                           <span class="text-muted d-block text-center text-sm-left d-sm-inline-block mt-3">Copyright © {{NOM_SITE}} 2016-{{ 'now'|date('Y') }}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="{{asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
+        <script src="{{asset('assets/vendors/chart.js/Chart.min.js')}}"></script>
+        <script src="{{asset('assets/vendors/progressbar.js/progressbar.min.js')}}"></script>
+        <script src="{{asset('assets/vendors/jvectormap/jquery-jvectormap.min.js')}}"></script>
+        <script src="{{asset('assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+        <script src="{{asset('assets/vendors/owl-carousel-2/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('assets/js/off-canvas.js')}}"></script>
+        <script src="{{asset('assets/js/hoverable-collapse.js')}}"></script>
+        <script src="{{asset('assets/js/misc.js')}}"></script>
+        <script src="{{asset('assets/js/settings.js')}}"></script>
+        <script src="{{asset('assets/js/todolist.js')}}"></script>
+        <script src="{{asset('assets/js/dashboard.js')}}"></script>
+    </body>
+</html>
+<style>
+    input{
+        color:#FFF;
+        background-color:#FFF;
+        font-size:25px;
+    }
+</style>

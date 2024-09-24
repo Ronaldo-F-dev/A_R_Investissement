@@ -1,3 +1,46 @@
-body {
-    background-color: skyblue;
+/*@import "bootstrap";
+@import "font-awesome";*/
+
+
+
+
+.flash {
+    font-family: Arial, sans-serif;
+    padding: 8px 30px;
+    border-radius: 4px;
+    font-weight: 400;
+    position: fixed;
+    /*top: 20px;*/
+    top: 100px;
+    right: 20px;
+    font-size: 16px;
+    color: #fff;
+    z-index: 10000;
+}
+
+
+.flash-success {
+    background-color: green;
+    color: fff;
+}
+
+.flash-danger {
+    background: #d14130;
+    color: fff;
+}
+
+.flash-warning {
+    color: #FFF;
+    background: #00baf3;
+    border-color: #faebcc;
+}
+
+@media only screen and (max-width: 1050px) {
+    .flash {
+        text-align: center;
+        right: 0;
+        left: 50%;
+        width: 300px;
+        margin-left: -150px;
+    }
 }
