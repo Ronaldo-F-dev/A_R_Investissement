@@ -7,7 +7,7 @@ Ce projet est une application Symfony qui simule quelques fonctionnalités d'un 
 
 Avant de commencer, assurez-vous d'avoir les outils suivants installés sur votre machine :
 
-* [XAMPP](https://www.apachefriends.org/fr/index.html) (qui inclut PHP et MySQL)
+* [XAMPP](https://www.apachefriends.org/fr/index.html) (qui inclut PHP >= 8.2 et MySQL)
 * [Composer](https://getcomposer.org/) (pour gérer les dépendances PHP)
 * [Git](https://git-scm.com/) (pour cloner le projet)
 * [CLI Symfony](https://git-scm.com/) (pour cloner le projet)
